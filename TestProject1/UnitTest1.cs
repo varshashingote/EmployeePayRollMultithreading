@@ -35,8 +35,16 @@ namespace TestProject1
             DateTime startdateTime = DateTime.Now;
             employeePayRollOperation.AddEmployeePayRoll(employeedetails);
             DateTime stopdateTime = DateTime.Now;
-            Console.WriteLine("Duation without thread" +(stopdateTime-startdateTime));
+            Console.WriteLine("Duation without thread" + (stopdateTime - startdateTime));
+
+
+            DateTime StartdatetimeThread = DateTime.Now;
+            employeePayRollOperation.AddEmployeeToPayrollWiththred(employeedetails);
+            DateTime stopdateTimethread = DateTime.Now;
+            Console.WriteLine("Duation with thread" + (stopdateTimethread - StartdatetimeThread));
+
 
         }
+
     }
 }
