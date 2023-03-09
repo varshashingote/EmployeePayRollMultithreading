@@ -42,7 +42,7 @@ namespace TestProject1
             employeePayRollOperation.AddEmployeeToPayrollWiththred(employeedetails);
             DateTime stopdateTimethread = DateTime.Now;
             Console.WriteLine("Duation with thread" + (stopdateTimethread - StartdatetimeThread));
-
+            employeePayRollOperation.EmplyoeeCount();
 
         }
 

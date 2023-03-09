@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace EmployeePayRoll_MultiThreading
         {
             employeedeatils.ForEach(employeeData =>
             {
+             
                 Console.WriteLine("Employee Being Added :" + employeeData.EmployeeName);
                 this.addEmployeeToPayroll(employeeData);
                 Console.WriteLine("Employee added : " + employeeData.EmployeeName);
@@ -28,6 +30,7 @@ namespace EmployeePayRoll_MultiThreading
             {
                 Task thread = new Task(() =>
                 {
+                    
                     Console.WriteLine("Employee Being Added :" + employeeData.EmployeeName);
                     this.addEmployeeToPayroll(employeeData);
                     Console.WriteLine("Employee added : " + employeeData.EmployeeName);
@@ -41,6 +44,10 @@ namespace EmployeePayRoll_MultiThreading
             {
                 employeedeatils.Add(emp);
             }
+        public int EmplyoeeCount()
+        {
+            return this.employeedeatils.Count();
+        }
         }
     }
 
